@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14532d">
+  <title>Saúde Financeira</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <p class="topo__sub">Controle financeiro da comunidade</p>
+    <h1 class="topo__titulo">Saúde Financeira</h1>
+  </header>
+
+  <main class="conteudo">
+    <p id="status" class="status" role="status">Carregando dados…</p>
+
+    <!-- Painel de Métricas (valores vêm prontos do objeto "metricas" da API) -->
+    <section class="metricas" aria-label="Painel de métricas">
+      <article class="card card--saldo">
+        <h2 class="card__rotulo">Saldo total</h2>
+        <p id="saldoTotal" class="card__valor">—</p>
+      </article>
+
+      <article class="card">
+        <h2 class="card__rotulo">Total de despesas</h2>
+        <p id="totalDespesas" class="card__valor">—</p>
+      </article>
+
+      <article class="card card--impulso">
+        <h2 class="card__rotulo">Gasto por impulso</h2>
+        <p id="totalGastoImpulso" class="card__valor">—</p>
+        <p class="card__dica">Antes de comprar, pergunte: eu preciso disso? (ODS 12)</p>
+      </article>
+    </section>
+
+    <!-- Extrato (itens vêm do array "historico" da API) -->
+    <section class="extrato" aria-labelledby="titulo-extrato">
+      <div class="extrato__cabecalho">
+        <h2 id="titulo-extrato">Extrato</h2>
+        <button id="btnAtualizar" class="botao-link" type="button">Atualizar</button>
+      </div>
+      <ul id="listaHistorico" class="lista"></ul>
+    </section>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação principal">
+    <a href="index.html" class="navegacao__item navegacao__item--ativo" aria-current="page">
+      <span aria-hidden="true">◉</span> Início
+    </a>
+    <a href="cadastro.html" class="navegacao__item">
+      <span aria-hidden="true">＋</span> Nova transação
+    </a>
+  </nav>
+
+  <script src="js/config.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14532d">
+  <title>Nova transação · Saúde Financeira</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <p class="topo__sub">Registre uma receita ou despesa</p>
+    <h1 class="topo__titulo">Nova transação</h1>
+  </header>
+
+  <main class="conteudo">
+    <form id="formTransacao" class="formulario" novalidate>
+      <div class="campo">
+        <label for="descricao">Descrição</label>
+        <input id="descricao" name="descricao" type="text" placeholder="Ex.: Mercado do mês" required maxlength="100">
+      </div>
+
+      <div class="campo">
+        <label for="valor">Valor (R$)</label>
+        <input id="valor" name="valor" type="number" inputmode="decimal" step="0.01" min="0.01" placeholder="0,00" required>
+      </div>
+
+      <fieldset class="campo">
+        <legend>Tipo</legend>
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="tipo" value="despesa" checked>
+            <span>Despesa</span>
+          </label>
+          <label class="opcao">
+            <input type="radio" name="tipo" value="receita">
+            <span>Receita</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="campo">
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria" required>
+          <option value="" disabled selected>Selecione…</option>
+          <option>Alimentação</option>
+          <option>Moradia</option>
+          <option>Transporte</option>
+          <option>Saúde</option>
+          <option>Educação</option>
+          <option>Lazer</option>
+          <option>Compras</option>
+          <option>Salário</option>
+          <option>Outros</option>
+        </select>
+      </div>
+
+      <fieldset id="grupoConsumo" class="campo">
+        <legend>Como foi esse gasto?</legend>
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="consumoConsciente" value="true" checked>
+            <span>Consciente (essencial)</span>
+          </label>
+          <label class="opcao opcao--impulso">
+            <input type="radio" name="consumoConsciente" value="false">
+            <span>Por impulso</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <p id="mensagem" class="status status--oculto" role="status"></p>
+
+      <button id="btnSalvar" class="botao" type="submit">Salvar transação</button>
+    </form>
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação principal">
+    <a href="index.html" class="navegacao__item">
+      <span aria-hidden="true">◉</span> Início
+    </a>
+    <a href="cadastro.html" class="navegacao__item navegacao__item--ativo" aria-current="page">
+      <span aria-hidden="true">＋</span> Nova transação
+    </a>
+  </nav>
+
+  <script src="js/config.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>
