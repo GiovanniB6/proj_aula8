@@ -7,6 +7,8 @@ Projeto extensionista (ODS 1 e ODS 12) da disciplina Web Mobile — TADS Mackenz
 
 ## Como rodar
 
+Requisitos: Node.js 18 ou superior e npm.
+
 1. `npm install`
 2. Copie `.env.example` para `.env` e coloque a sua string de conexão do MongoDB Atlas em `MONGODB_URI`.
 3. `npm run start:dev`
